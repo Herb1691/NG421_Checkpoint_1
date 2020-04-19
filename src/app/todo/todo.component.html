@@ -1,5 +1,13 @@
 <div class="view">
-    <label>{{todo.title}}</label>
+    <label *ngIf="!todo.isEditing; else editingTodo" (dblclick)="editTodo(todo)">{{todo.title}}</label>
+    <ng-template #editingTodo>
+        <input type="text" [(ngModel)]="todo.title" autofocus>
+    </ng-template>    
+    <div>
+        <select [(ngModel)]="todo.status">
+            <option *ngFor="let status of getStatus()">{{status}}</option>
+        </select>
+    </div>
     <div class="float-right">
         <button type="button" (click)= deleteTodo(todo) class="btn btn-danger btn-sm">Delete</button>
     </div>

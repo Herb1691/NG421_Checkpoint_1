@@ -4,4 +4,5 @@ export interface ITodo {
     status: string;
     description: string;
     createdAt: Date;
+    isEditing: boolean;
   }

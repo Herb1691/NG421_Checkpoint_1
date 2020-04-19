@@ -10,6 +10,7 @@ import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-m
 })
 export class TodoComponent implements OnInit {
   @Input() todo;
+  isEditing: false;
   constructor(private todoService : TodoService, private modalService : NgbModal) { }
   todoTitle = '';
   ngOnInit() {
@@ -25,6 +26,14 @@ export class TodoComponent implements OnInit {
       }
     }
     catch(ex){}
+  }
+
+  getStatus() {
+    return this.todoService.getStatuses();
+  }
+
+  editTodo() {
+    this.todoService.editTodo(this.todo);
   }
 
 
