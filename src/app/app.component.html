@@ -1,5 +1,16 @@
-<h1 align="center">Todo List</h1>
-<app-create-todo></app-create-todo>
-<app-board></app-board>
-<app-todo-table></app-todo-table>
-<router-outlet></router-outlet>
+<div class="container">
+    <h1 align="center">Todo List</h1>
+    <div class="row">
+        <div class="col">
+            <!-- This nav gives you links to click, which tells the router which route to use
+            (defined in the routes constant in AppRoutingModule) -->
+            <nav>
+                <ul style="list-style-type: none; display: inline;">
+                    <li class="float-left" style="display: inline; margin-right: 5px;"><a routerLink="/board" routerLinkActive="active">Boards View</a></li>
+                    <li class="float-left" style="display: inline;"><a routerLink="/table" routerLinkActive="active">Table View</a></li>
+                </ul>
+            </nav>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

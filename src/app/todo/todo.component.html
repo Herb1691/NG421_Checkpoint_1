@@ -2,18 +2,17 @@
     <div>
         <label *ngIf="!todo.isEditing; else editingTodo" (dblclick)="editTodo(todo)">{{todo.title}}</label>
         <ng-template #editingTodo>
-            <input type="text" [(ngModel)]="todo.title" (blur)="doneEdit(todo)" (keyup.enter)="saveTodo(todo)" 
+            <input type="text" [(ngModel)]="todo.title" (keyup.enter)="saveTodo(todo)" 
             (keyup.esc)="cancelEdit()" autofocus>
             <button type="button" (click)= saveTodo(todo) class="btn btn-danger btn-sm">Save</button>
         </ng-template>
-    </div>
-    <div>
-        <select [(ngModel)]="todo.status">
+    
+        <select [(ngModel)]="todo.status" style="display: inline; margin-left: 15px;">
             <option *ngFor="let status of getStatus()">{{status}}</option>
         </select>
     </div>
     <div class="float-right">
-        <button mat-button (click)= editTodo(todo) class="btn btn-danger btn-sm">Edit</button>
+        <button mat-button (click)= editTodo(todo) class="btn btn-danger btn-sm" style="margin-right: 5px;">Edit</button>
         <button mat-button (click)= deleteTodo(todo) class="btn btn-danger btn-sm">Delete</button>
     </div>
 </div>

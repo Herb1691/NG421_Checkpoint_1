@@ -8,7 +8,7 @@ import { CreateTodoComponent } from './create-todo/create-todo.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 import { TodoEditModalComponent } from './todo-edit-modal/todo-edit-modal.component';
-import {RouterModule } from '@angular/router';
+import {RouterModule, Routes } from '@angular/router';
 import { BoardComponent } from './board/board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,7 +19,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TodoTableComponent } from './todo-table/todo-table.component';
 
-const routes = [];
+const routes = [
+  { path: 'board', component: BoardComponent },
+  { path: 'table', component: TodoTableComponent }
+];
 const appRoutes = RouterModule.forRoot(routes);
 
 @NgModule({
