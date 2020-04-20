@@ -7,12 +7,12 @@ import {TodoService} from '../services/todo.service';
   styleUrls: ['./create-todo.component.css']
 })
 export class CreateTodoComponent implements OnInit {
-  todoTitle = ''
-  constructor(private todoService : TodoService) { }
+  todoTitle = '';
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
   }
-  addTodo():void {
+  addTodo(): void {
     this.todoService.addTodo({
       title: this.todoTitle,
       status: 'Todo',
