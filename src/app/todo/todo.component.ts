@@ -36,5 +36,12 @@ export class TodoComponent implements OnInit {
     this.todoService.editTodo(this.todo);
   }
 
+  doneEdit() {
+    this.todoService.doneEdit(this.todo);
+  }
+
+  cancelEdit() {
+    this.todoService.cancelEdit(this.todo);
+  }
 
 }

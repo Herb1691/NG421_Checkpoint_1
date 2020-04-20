@@ -26,7 +26,15 @@ export class TodoService {
     }
   }
   editTodo(todo: ITodo): void {
+    todo.description = todo.title;
     todo.isEditing = true;
+  }
+  doneEdit(todo: ITodo): void {
+    todo.isEditing = false;
+  }
+  cancelEdit(todo: ITodo): void {
+    todo.title = todo.description;
+    todo.isEditing = false;
   }
   deleteTodo(todo: ITodo) {
     const index = this.todoList.findIndex(todoItem => todoItem === todo);

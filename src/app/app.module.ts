@@ -26,7 +26,7 @@ const appRoutes = RouterModule.forRoot(routes);
     BrowserModule,
     appRoutes,
     FormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
