@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Save Todo Item?</h4>
+    <button type="button" class="close" aria-label="Close"
+    (click)="no()"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+    <form>
+        <!-- You will want to change this label later on but for now it can stay as-is -->
+        Are you sure you want to save your changes to this item?
+        <div class="form-group">
+            <button class="btn btn-outline-secondary" type="button" (click)="yes()">Yes, save changes</button>
+            <button class="btn btn-outline-secondary" button type="button" (click)="no()">No</button>
+        </div>
+    </form>
+</div>
